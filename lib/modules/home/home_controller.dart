@@ -8,6 +8,7 @@ import 'package:flutter_getx_boilerplate/shared/shared.dart';
 import 'package:get/get.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
+import '../../models/daily_summary.dart';
 import '../../models/sms_data.dart';
 import 'package:flutter_sms_inbox/flutter_sms_inbox.dart';
 import 'package:permission_handler/permission_handler.dart';
@@ -47,8 +48,6 @@ class HomeController extends GetxController {
       _saveUserInfo(_users);
     }
   }
-
-  Rxn<List<SmsData>> smsData = Rxn<List<SmsData>>();
 
   void signout() {
     var prefs = Get.find<SharedPreferences>();
@@ -109,6 +108,9 @@ class HomeController extends GetxController {
     }
   }
 
+  Rxn<List<SmsData>> smsData = Rxn<List<SmsData>>();
+  Rxn<List<DailySummary>> dailySummaries = Rxn<List<DailySummary>>();
+
   Future<void> loadSmsData() async {
     final permission = await Permission.sms.request();
     if (!permission.isGranted) {
@@ -137,6 +139,10 @@ class HomeController extends GetxController {
     }
 
     smsData.value = parsedList;
+    dailySummaries.value = parsedList.groupByDate();
+
+    print("Parsed ${parsedList.length} SMS messages");
+    print("Summary: ${dailySummaries.value}");
     print("parsed data");
     print(smsData.value);
   }
