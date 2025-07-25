@@ -1,12 +1,13 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_getx_boilerplate/modules/home/home.dart';
-import 'package:flutter_getx_boilerplate/modules/home/tabs/tabs.dart';
 import 'package:flutter_getx_boilerplate/shared/shared.dart';
 
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:get/get.dart';
 
 class HomeScreen extends GetView<HomeController> {
+  const HomeScreen({super.key});
+
   @override
   Widget build(BuildContext context) {
     return WillPopScope(
@@ -29,8 +30,8 @@ class HomeScreen extends GetView<HomeController> {
                 : "icon_home.svg",
           ),
           _buildNavigationBarItem(
-            "Discover",
-            MainTabs.discover == controller.currentTab.value
+            "Daily",
+            MainTabs.daily == controller.currentTab.value
                 ? "icon_discover_activited.svg"
                 : "icon_discover.svg",
           ),
@@ -39,8 +40,8 @@ class HomeScreen extends GetView<HomeController> {
             "icon_resource.svg",
           ),
           _buildNavigationBarItem(
-            "Inbox",
-            MainTabs.inbox == controller.currentTab.value
+            "Monthly",
+            MainTabs.monthly == controller.currentTab.value
                 ? "icon_inbox_activited.svg"
                 : "icon_inbox.svg",
           ),
@@ -55,7 +56,7 @@ class HomeScreen extends GetView<HomeController> {
         unselectedItemColor: ColorConstants.black,
         currentIndex: controller.getCurrentIndex(controller.currentTab.value),
         selectedItemColor: ColorConstants.black,
-        selectedLabelStyle: TextStyle(
+        selectedLabelStyle: const TextStyle(
           fontSize: 14,
           fontWeight: FontWeight.bold,
         ),
@@ -68,17 +69,15 @@ class HomeScreen extends GetView<HomeController> {
     switch (tab) {
       case MainTabs.home:
         return controller.mainTab;
-      case MainTabs.discover:
-        return controller.discoverTab;
+      case MainTabs.daily:
+        return controller.dailySummaryTab;
       case MainTabs.resource:
         return controller.resourceTab;
-      case MainTabs.inbox:
-        return controller.inboxTab;
+      case MainTabs.monthly:
+        return controller.monthlySummaryTab;
       case MainTabs.me:
         return controller.meTab;
-      default:
-        return controller.mainTab;
-    }
+      }
   }
 
   BottomNavigationBarItem _buildNavigationBarItem(String label, String svg) {

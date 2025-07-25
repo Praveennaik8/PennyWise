@@ -1,5 +1,5 @@
 class SmsData {
-  final String source;
+  late final String source;
   final double amount;
   final String type; // "credit" or "debit"
   final DateTime date;
