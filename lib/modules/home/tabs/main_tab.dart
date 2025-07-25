@@ -1,52 +1,73 @@
-import 'package:flutter/material.dart';
-import 'package:flutter_getx_boilerplate/models/response/users_response.dart';
-import 'package:flutter_getx_boilerplate/modules/home/home.dart';
-import 'package:flutter_getx_boilerplate/shared/constants/colors.dart';
+import 'dart:math';
 
-import 'package:flutter_staggered_grid_view/flutter_staggered_grid_view.dart';
+import 'package:flutter/material.dart';
+import 'package:flutter_getx_boilerplate/shared/constants/colors.dart';
 import 'package:get/get.dart';
-import 'package:cached_network_image/cached_network_image.dart';
+
+import '../../../constants.dart';
+import '../../../models/sms_data.dart';
+import '../home_controller.dart';
+import '../../../shared/utils/custom_data_cells.dart';
 
 class MainTab extends GetView<HomeController> {
+  const MainTab({super.key});
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: Obx(
-        () => RefreshIndicator(
-          child: _buildGridView(),
-          onRefresh: () => controller.loadUsers(),
-        ),
-      ),
-    );
-  }
+      body: SafeArea(
+        child: Padding(
+          padding: const EdgeInsets.only(top: 16.0),
+          child: Obx(() {
+            final transactionList = controller.smsData.value ?? [];
+            final smsList = transactionList.sublist(0, min(transactionList.length, Constants.MAX_TRANSACTIONS));
 
-  Widget _buildGridView() {
-    return MasonryGridView.count(
-      crossAxisCount: 4,
-      itemCount: data!.length,
-      itemBuilder: (BuildContext context, int index) => new Container(
-        color: ColorConstants.lightGray,
-        child: Column(
-          mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-          children: [
-            Text('${data![index].lastName} ${data![index].firstName}'),
-            CachedNetworkImage(
-              fit: BoxFit.fill,
-              imageUrl: data![index].avatar ??
-                  'https://reqres.in/img/faces/1-image.jpg',
-              placeholder: (context, url) => Image(
-                image: AssetImage('assets/images/icon_success.png'),
+            if (smsList.isEmpty) {
+              return const Center(child: Text("No transactions available"));
+            }
+
+            return RefreshIndicator(
+              onRefresh: controller.loadSmsData,
+              child: ListView(
+                padding: EdgeInsets.zero,
+                children: [
+                  // 🔷 Transaction Table
+                  _buildTransactionTable(smsList),
+                ],
               ),
-              errorWidget: (context, url, error) => Icon(Icons.error),
-            ),
-            Text('${data![index].email}'),
-          ],
+            );
+          }),
         ),
       ),
     );
   }
 
-  List<Datum>? get data {
-    return controller.users.value == null ? [] : controller.users.value!.data;
+  // 🔷 Transactions Table Widget
+  Widget _buildTransactionTable(List<SmsData> smsList) {
+    final columns = [
+      const DataColumn(label: Text('Source')),
+      const DataColumn(label: Text('Amount')),
+      const DataColumn(label: Text('Type')),
+      const DataColumn(label: Text('Date')),
+    ];
+
+    final rows = smsList.map((txn) {
+      return DataRow(cells: [
+        CustomDataCells.buildWrappedCell(txn.source),
+        CustomDataCells.buildWrappedCell(txn.amount.toStringAsFixed(2)),
+        CustomDataCells.buildWrappedCellColoured(txn.type),
+        CustomDataCells.buildWrappedDateCell(txn.date),
+      ]);
+    }).toList();
+
+    return SingleChildScrollView(
+      scrollDirection: Axis.horizontal,
+      child: DataTable(
+        columns: columns,
+        rows: rows,
+        columnSpacing: 20,
+        headingRowColor: WidgetStateProperty.all(ColorConstants.lightGray.withValues())
+      ),
+    );
   }
 }
