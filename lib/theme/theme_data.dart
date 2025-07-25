@@ -31,7 +31,7 @@ class ThemeConfig {
         space: 1,
         thickness: 1,
       ),
-      cardTheme: CardTheme(
+      cardTheme: CardThemeData(
         color: cardBackground,
         margin: EdgeInsets.zero,
         clipBehavior: Clip.antiAliasWithSaveLayer, 

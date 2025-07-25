@@ -17,12 +17,17 @@ class AppPages {
     ),
     GetPage(
       name: Routes.AUTH,
-      page: () => AuthScreen(),
-      binding: AuthBinding(),
+      page: () => HomeScreen(),
+      binding: HomeBinding(),
       children: [
-        GetPage(name: Routes.REGISTER, page: () => RegisterScreen()),
-        GetPage(name: Routes.LOGIN, page: () => LoginScreen()),
-      ],
+      GetPage(name: Routes.CARDS, page: () => CardsScreen()),
+      ]
+      // page: () => AuthScreen(),
+      // binding: AuthBinding(),
+      // children: [
+      //   GetPage(name: Routes.REGISTER, page: () => RegisterScreen()),
+      //   GetPage(name: Routes.LOGIN, page: () => LoginScreen()),
+      // ],
     ),
     GetPage(
         name: Routes.HOME,
