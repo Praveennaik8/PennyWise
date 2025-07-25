@@ -16,9 +16,7 @@ class MonthlySummaryTab extends GetView<HomeController> {
         child: Padding(
           padding: const EdgeInsets.only(top: 16.0),
           child: Obx(() {
-
             final monthlySummaries = controller.monthlySummaries.value ?? [];
-
             if (monthlySummaries.isEmpty) {
               return const Center(child: Text("No transactions available"));
             }
@@ -31,7 +29,6 @@ class MonthlySummaryTab extends GetView<HomeController> {
                   // 🔷 Daily Summary
                   // 🔷 Monthly Summary
                   _buildMonthlySummaryTable(monthlySummaries),
-
                 ],
               ),
             );

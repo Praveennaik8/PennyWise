@@ -14,7 +14,6 @@ class DailySummaryTab extends GetView<HomeController> {
 
   @override
   Widget build(BuildContext context) {
-
     return Scaffold(
       body: SafeArea(
         child: Padding(
@@ -34,7 +33,6 @@ class DailySummaryTab extends GetView<HomeController> {
                 children: [
                   // 🔷 Daily Summary
                   _buildDailySummaryTable(dailySummaries),
-
                 ],
               ),
             );

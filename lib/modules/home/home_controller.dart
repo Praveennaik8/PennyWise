@@ -113,8 +113,6 @@ class HomeController extends GetxController {
     }
   }
 
-
-
   Future<void> loadSmsData() async {
     final permission = await Permission.sms.request();
     if (!permission.isGranted) {
