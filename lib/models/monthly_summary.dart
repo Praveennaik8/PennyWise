@@ -1,4 +1,5 @@
 import 'package:flutter_getx_boilerplate/models/sms_data.dart';
+import 'package:flutter_getx_boilerplate/models/transaction_type.dart';
 
 class MonthlySummary {
   final String month; // e.g. "Jul 2025"
@@ -30,11 +31,11 @@ extension SmsSummaryExtension on List<SmsData> {
       final transactions = entry.value;
 
       final totalIncome = transactions
-          .where((t) => t.type.toLowerCase() == 'credit')
+          .where((t) => t.type == TransactionType.credit)
           .fold(0.0, (sum, t) => sum + t.amount);
 
       final totalSpend = transactions
-          .where((t) => t.type.toLowerCase() == 'debit')
+          .where((t) => t.type == TransactionType.debit)
           .fold(0.0, (sum, t) => sum + t.amount);
 
       return MonthlySummary(

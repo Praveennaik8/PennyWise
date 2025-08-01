@@ -5,16 +5,17 @@ import 'package:flutter_getx_boilerplate/api/api.dart';
 import 'package:flutter_getx_boilerplate/models/response/users_response.dart';
 import 'package:flutter_getx_boilerplate/modules/home/home.dart';
 import 'package:flutter_getx_boilerplate/shared/shared.dart';
-import 'package:flutter_getx_boilerplate/shared/utils/sms_parser.dart';
 import 'package:get/get.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
-import '../../models/MonthlySummary.dart';
+import '../../models/monthly_summary.dart';
 import '../../models/daily_summary.dart';
 import '../../models/sms_data.dart';
 import 'package:flutter_sms_inbox/flutter_sms_inbox.dart';
 import 'package:permission_handler/permission_handler.dart';
 import "../../constants.dart";
+import '../../shared/parsers/transaction_parser.dart';
+import '../../shared/parsers/transaction_parser_factory.dart';
 
 class HomeController extends GetxController {
   final ApiRepository apiRepository;
@@ -134,7 +135,7 @@ class HomeController extends GetxController {
       final msgDate = msg.date ?? DateTime.now();
       if (msgDate.isBefore(twoDaysAgo)) continue;
 
-      final parsed = SmsParser.parseSmsToSmsData(msg.body ?? '', msgDate);
+      final parsed = parseSmsToSmsData(msg.body ?? '', msgDate);
       if (parsed != null) {
         parsedList.add(parsed);
       }
@@ -147,5 +148,23 @@ class HomeController extends GetxController {
     print("Summary: ${dailySummaries.value}");
     print("parsed data");
     print(smsData.value);
+  }
+
+  SmsData? parseSmsToSmsData(String body, DateTime date) {
+    TransactionParser? parser = TransactionParserFactory.instance.getParser(body);
+    if (parser != null) {
+      SmsData? data = parser.parseSms(body, date);
+      if (data != null) {
+        _logParsedSms(body, data, date);
+        return data;
+      }
+    }
+    return null;
+  }
+
+  static void _logParsedSms(String raw, SmsData data, DateTime date) {
+    final cleaned = raw.replaceAll(',', ' ').replaceAll('\n', ' ');
+    print(
+        "Parsed SMS -> Body: $cleaned, Source: ${data.source}, Amount: ${data.amount}, Type: ${data.type}, Date: $date");
   }
 }

@@ -1,5 +1,6 @@
 // Add this class for daily summary
 import 'package:flutter_getx_boilerplate/models/sms_data.dart';
+import 'package:flutter_getx_boilerplate/models/transaction_type.dart';
 
 class DailySummary {
   final DateTime date;
@@ -30,10 +31,10 @@ extension SmsSummaryExtension on List<SmsData> {
     return grouped.entries.map((entry) {
       final date = DateTime.parse(entry.key);
       final spend = entry.value
-          .where((sms) => sms.type == 'debit')
+          .where((sms) => sms.type == TransactionType.debit)
           .fold(0.0, (sum, sms) => sum + sms.amount);
       final income = entry.value
-          .where((sms) => sms.type == 'credit')
+          .where((sms) => sms.type == TransactionType.credit)
           .fold(0.0, (sum, sms) => sum + sms.amount);
 
       return DailySummary(

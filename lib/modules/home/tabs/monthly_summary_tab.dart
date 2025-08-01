@@ -3,7 +3,7 @@ import 'package:flutter_getx_boilerplate/shared/shared.dart';
 import 'package:get/get_state_manager/src/rx_flutter/rx_obx_widget.dart';
 import 'package:get/get_state_manager/src/simple/get_view.dart';
 
-import '../../../models/MonthlySummary.dart';
+import '../../../models/monthly_summary.dart';
 import '../home_controller.dart';
 
 class MonthlySummaryTab extends GetView<HomeController> {
