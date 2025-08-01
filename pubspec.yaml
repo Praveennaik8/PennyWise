@@ -36,6 +36,7 @@ dependencies:
   cached_network_image: 3.4.1
   flutter_sms_inbox: ^1.0.4
   permission_handler: ^11.0.1
+  intl: ^0.19.0
 
 dev_dependencies:
   flutter_test:
