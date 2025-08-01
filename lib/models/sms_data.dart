@@ -1,7 +1,9 @@
+import 'package:flutter_getx_boilerplate/models/transaction_type.dart';
+
 class SmsData {
   late final String source;
   final double amount;
-  final String type; // "credit" or "debit"
+  final TransactionType type;
   final DateTime date;
 
   SmsData({

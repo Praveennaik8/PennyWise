@@ -287,7 +287,7 @@ class _PennywiseSummaryPageState extends State<MainTab> with TickerProviderState
         .map((entry) {
       final idx = entry.key;
       final txn = entry.value;
-      final isDebit = txn.type.toLowerCase() == "debit";
+      final isDebit = txn.type.name.toLowerCase() == "debit";
 
       return DataRow(
         color: MaterialStateProperty.all(
@@ -305,7 +305,7 @@ class _PennywiseSummaryPageState extends State<MainTab> with TickerProviderState
               ),
             ),
           ),
-          CustomDataCells.buildWrappedCellColoured(txn.type),
+          CustomDataCells.buildWrappedCellColoured(txn.type.name),
           DataCell(Text(DateFormat('hh:mm a').format(txn.date))),
         ],
       );
