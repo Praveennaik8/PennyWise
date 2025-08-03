@@ -2,11 +2,9 @@
 
 ## A Smart Expense Tracking & Financial Management App
 
-**Languages: English (this file), [中文](README.zh-cn.md).** , [KR](README.ko-kr.md)
-
 ## Introduction
 
-PennyWise is a comprehensive expense tracking and financial management application built with Flutter and GetX. The app helps users track their daily expenses, manage bank cards, analyze spending patterns, and maintain better financial health. Built with modern Flutter architecture and GetX state management, PennyWise provides a smooth, responsive user experience across all platforms.
+PennyWise is a simple expense tracking app works by parsing bank transaction SMS.
 
 ## Technology & Project Introduction
 
@@ -63,6 +61,7 @@ lib/
    |- routes.dart - Route export file.
 |- Shared - Global shared folders, including static variables, global services, utils, global Widgets, etc.
    |- shared.dart - Global shared export file.
+   |- parsers/ - You can add your custom parser here
 |- theme - Theme folder.
 |- app_bindings.dart - Services started before the app runs, such as Restful api.
 |- di.dart - Global dependency injection objects, such as SharedPreferences, etc.
@@ -79,6 +78,10 @@ lib/
   - Is it dangerous? - No, the code is open source. Everything is done on your phone and your data doesn't go anywhere.
 - Give restricted permissions - https://support.google.com/android/answer/12623953?hl=en
 - Voila, you can manage your expenses now.
+
+NOTE: IOS doesn't support SMS listing. don't ask me why I chose flutter only for android.
+
+-----------------------------------------------------------------------------------
 
 Initially forked from https://github.com/KevinZhang19870314/flutter_getx_boilerplate
 
