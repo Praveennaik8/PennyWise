@@ -13,8 +13,8 @@ PennyWise is a comprehensive expense tracking and financial management applicati
 PennyWise is built with Flutter 3.x and uses GetX for state management, providing a robust and scalable architecture for expense tracking and financial management. The project features a clean folder structure, customizable themes, API integration, efficient state management, and comprehensive routing. Technologies used include but are not limited to [Flutter](https://flutter.cn/), [Dart](https://dart.dev/), [GetX](https://pub.dev/packages/get), and more.
 
 <p align='center'>
-    <img src="assets/screenshot/1.jpg" width="187" heght="333" />
-    <img src="assets/screenshot/2.jpg" width="187" heght="333" />
+    <img src="assets/screenshot/1.png" width="187" heght="333" />
+    <img src="assets/screenshot/2.png" width="187" heght="333" />
 </p>
 
 ## Installation & Use
@@ -71,7 +71,7 @@ lib/
 
 -----------------------------------------------------------------------------------
 
-Installations:
+## Android APK Installations:
 
 - Get the latest release APK under assets https://github.com/Praveennaik8/PennyWise/releases
 - Install it, You will need to disable play protect and enable installing from unknown sources: https://support.google.com/android/answer/9457058?hl=en
