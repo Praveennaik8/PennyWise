@@ -1,4 +1,4 @@
-import 'package:flutter_getx_boilerplate/models/transaction_type.dart';
+import 'package:penny_wise/models/transaction_type.dart';
 
 class SmsData {
   late final String source;

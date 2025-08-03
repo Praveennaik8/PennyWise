@@ -1,4 +1,4 @@
-package com.example.flutter_getx_boilerplate
+package com.example.penny_wise
 
 import io.flutter.embedding.android.FlutterActivity
 

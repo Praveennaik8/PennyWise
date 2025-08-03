@@ -1,4 +1,4 @@
-import 'package:flutter_getx_boilerplate/shared/parsers/transaction_parser.dart';
+import 'package:penny_wise/shared/parsers/transaction_parser.dart';
 
 class DefaultTransactionParser extends TransactionParser {
   final SOURCE = "Unknown";

@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_getx_boilerplate/shared/constants/constants.dart';
+import 'package:penny_wise/shared/constants/constants.dart';
 import 'package:flutter_svg/svg.dart';
 
 class IconTitleItem extends StatelessWidget {

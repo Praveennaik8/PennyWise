@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_getx_boilerplate/modules/auth/auth.dart';
-import 'package:flutter_getx_boilerplate/routes/routes.dart';
-import 'package:flutter_getx_boilerplate/shared/shared.dart';
+import 'package:penny_wise/modules/auth/auth.dart';
+import 'package:penny_wise/routes/routes.dart';
+import 'package:penny_wise/shared/shared.dart';
 import 'package:get/get.dart';
 
 class AuthScreen extends GetView<AuthController> {

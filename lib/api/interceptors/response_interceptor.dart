@@ -2,8 +2,8 @@ import 'dart:async';
 
 import 'package:flutter/material.dart';
 import 'package:flutter_easyloading/flutter_easyloading.dart';
-import 'package:flutter_getx_boilerplate/models/models.dart';
-import 'package:flutter_getx_boilerplate/shared/shared.dart';
+import 'package:penny_wise/models/models.dart';
+import 'package:penny_wise/shared/shared.dart';
 import 'package:get/get.dart';
 import 'package:get/get_connect/http/src/request/request.dart';
 

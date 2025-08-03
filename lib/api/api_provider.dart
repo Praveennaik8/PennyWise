@@ -1,5 +1,5 @@
-import 'package:flutter_getx_boilerplate/api/base_provider.dart';
-import 'package:flutter_getx_boilerplate/models/models.dart';
+import 'package:penny_wise/api/base_provider.dart';
+import 'package:penny_wise/models/models.dart';
 import 'package:get/get.dart';
 
 class ApiProvider extends BaseProvider {

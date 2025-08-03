@@ -1,5 +1,5 @@
-import 'package:flutter_getx_boilerplate/models/sms_data.dart';
-import 'package:flutter_getx_boilerplate/models/transaction_type.dart';
+import 'package:penny_wise/models/sms_data.dart';
+import 'package:penny_wise/models/transaction_type.dart';
 
 class MonthlySummary {
   final String month; // e.g. "Jul 2025"

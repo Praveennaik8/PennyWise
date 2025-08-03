@@ -1,6 +1,6 @@
 // Add this class for daily summary
-import 'package:flutter_getx_boilerplate/models/sms_data.dart';
-import 'package:flutter_getx_boilerplate/models/transaction_type.dart';
+import 'package:penny_wise/models/sms_data.dart';
+import 'package:penny_wise/models/transaction_type.dart';
 
 class DailySummary {
   final DateTime date;
