@@ -1,4 +1,4 @@
-import 'package:flutter_getx_boilerplate/api/api.dart';
+import 'package:penny_wise/api/api.dart';
 import 'package:get/get.dart';
 
 class AppBinding extends Bindings {

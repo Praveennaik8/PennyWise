@@ -2,7 +2,7 @@
     <uses-permission android:name="android.permission.READ_SMS"/>
     <uses-permission android:name="android.permission.RECEIVE_SMS"/>
     <application
-        android:label="flutter_getx_boilerplate"
+        android:label="PennyWise"
         android:name="${applicationName}"
         android:icon="@mipmap/ic_launcher">
         <activity

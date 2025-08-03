@@ -1,7 +1,6 @@
-import 'package:flutter_getx_boilerplate/modules/auth/auth.dart';
-import 'package:flutter_getx_boilerplate/modules/home/home.dart';
-import 'package:flutter_getx_boilerplate/modules/me/cards/cards_screen.dart';
-import 'package:flutter_getx_boilerplate/modules/modules.dart';
+import 'package:penny_wise/modules/home/home.dart';
+import 'package:penny_wise/modules/me/cards/cards_screen.dart';
+import 'package:penny_wise/modules/modules.dart';
 import 'package:get/get.dart';
 
 part 'app_routes.dart';

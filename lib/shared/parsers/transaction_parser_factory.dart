@@ -1,4 +1,4 @@
-import 'package:flutter_getx_boilerplate/shared/parsers/Impl/sbi_upi_transaction_parser.dart';
+import 'package:penny_wise/shared/parsers/Impl/sbi_upi_transaction_parser.dart';
 
 import 'Impl/default_transaction_parser.dart';
 import 'transaction_parser.dart';

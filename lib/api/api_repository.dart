@@ -1,7 +1,7 @@
 import 'dart:async';
 
-import 'package:flutter_getx_boilerplate/models/models.dart';
-import 'package:flutter_getx_boilerplate/models/response/users_response.dart';
+import 'package:penny_wise/models/models.dart';
+import 'package:penny_wise/models/response/users_response.dart';
 
 import 'api.dart';
 

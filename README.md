@@ -1,41 +1,37 @@
-# flutter_getx_boilerplate
+# PennyWise
 
-## master branch: Fluter 3.24 version
-
-## Fluter-3.0.5 branch: Fluter 3.0.5 version
-
-## Flutter-2.x branch: Flutter 2.x version
+## A Smart Expense Tracking & Financial Management App
 
 **Languages: English (this file), [中文](README.zh-cn.md).** , [KR](README.ko-kr.md)
 
 ## Introduction
 
-During my study of Flutter, I have been using the flutter_bloc state management framework. I accidentally saw the GetX state management framework. Through ReadMe, I found that the GetX framework is very easy to get started. So I want to write a GetX Starter project while learning, which can not only help myself Learning can also help others quickly build a boilerplate. Before building this boilerplate, I searched many similar projects, and found that they were relatively simple, and none of them covered the common things that the project should have, so I sprouted the idea of ​​writing one by myself. Let me introduce them one by one below.
+PennyWise is a comprehensive expense tracking and financial management application built with Flutter and GetX. The app helps users track their daily expenses, manage bank cards, analyze spending patterns, and maintain better financial health. Built with modern Flutter architecture and GetX state management, PennyWise provides a smooth, responsive user experience across all platforms.
 
 ## Technology & Project Introduction
 
-Use Flutter 2.x to build a set of features containing predefined folder structure, style themes, API access, state management, routing & dependencies, etc. The project structure is clear and can be easily used as a Flutter template project. Technologies used include but are not limited to [Flutter](https://flutter.cn/), [Dart](https://dart.dev/), [GetX](https://pub.dev/packages/get), etc.
+PennyWise is built with Flutter 3.x and uses GetX for state management, providing a robust and scalable architecture for expense tracking and financial management. The project features a clean folder structure, customizable themes, API integration, efficient state management, and comprehensive routing. Technologies used include but are not limited to [Flutter](https://flutter.cn/), [Dart](https://dart.dev/), [GetX](https://pub.dev/packages/get), and more.
 
 <p align='center'>
-    <img src="https://github.com/KevinZhang19870314/flutter_getx_boilerplate/blob/master/assets/screenshot/2.jpg" width="187" heght="333" />
-    <img src="https://github.com/KevinZhang19870314/flutter_getx_boilerplate/blob/master/assets/screenshot/3.jpg" width="187" heght="333" />
-    <img src="https://github.com/KevinZhang19870314/flutter_getx_boilerplate/blob/master/assets/screenshot/4.jpg" width="187" heght="333" />
-    <img src="https://github.com/KevinZhang19870314/flutter_getx_boilerplate/blob/master/assets/screenshot/5.jpg" width="187" heght="333" />
-    <img src="https://github.com/KevinZhang19870314/flutter_getx_boilerplate/blob/master/assets/screenshot/6.jpg" width="187" heght="333" />
-    <img src="https://github.com/KevinZhang19870314/flutter_getx_boilerplate/blob/master/assets/screenshot/7.jpg" width="187" heght="333" />
-    <img src="https://github.com/KevinZhang19870314/flutter_getx_boilerplate/blob/master/assets/screenshot/8.jpg" width="187" heght="333" />
-    <img src="https://github.com/KevinZhang19870314/flutter_getx_boilerplate/blob/master/assets/screenshot/9.jpg" width="187" heght="333" />
-    <img src="https://github.com/KevinZhang19870314/flutter_getx_boilerplate/blob/master/assets/screenshot/chat.gif" width="237px" heght="416px" />
+    <img src="assets/screenshot/2.jpg" width="187" heght="333" />
+    <img src="assets/screenshot/3.jpg" width="187" heght="333" />
+    <img src="assets/screenshot/4.jpg" width="187" heght="333" />
+    <img src="assets/screenshot/5.jpg" width="187" heght="333" />
+    <img src="assets/screenshot/6.jpg" width="187" heght="333" />
+    <img src="assets/screenshot/7.jpg" width="187" heght="333" />
+    <img src="assets/screenshot/8.jpg" width="187" heght="333" />
+    <img src="assets/screenshot/9.jpg" width="187" heght="333" />
+    <img src="assets/screenshot/chat.gif" width="237px" heght="416px" />
 </p>
 
 ## Installation & Use
 
 **Step 1:**
 
-Fork this project to your own warehouse:
+Clone this project to your local machine:
 
 ```
-git clone https://github.com/KevinZhang19870314/flutter_getx_boilerplate.git
+git clone https://github.com/your-username/penny_wise.git
 ```
 
 **Step 2:**
@@ -80,11 +76,4 @@ lib/
 |- main.dart - Main entry.
 ```
 
-## Other
 
-In the writing process, because it involves the call of Restful api, here I used the free test api provided by [REQ|RES](https://reqres.in/).
-
-Test User as below:
-  
-    email: "eve.holt@reqres.in",
-    password: "pistol"

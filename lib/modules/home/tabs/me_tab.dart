@@ -1,8 +1,8 @@
 import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_getx_boilerplate/modules/home/home.dart';
-import 'package:flutter_getx_boilerplate/routes/routes.dart';
-import 'package:flutter_getx_boilerplate/shared/shared.dart';
+import 'package:penny_wise/modules/home/home.dart';
+import 'package:penny_wise/routes/routes.dart';
+import 'package:penny_wise/shared/shared.dart';
 import 'package:get/get.dart';
 
 class MeTab extends GetView<HomeController> {
