@@ -2,26 +2,17 @@
 
 ## A Smart Expense Tracking & Financial Management App
 
-**Languages: English (this file), [中文](README.zh-cn.md).** , [KR](README.ko-kr.md)
-
 ## Introduction
 
-PennyWise is a comprehensive expense tracking and financial management application built with Flutter and GetX. The app helps users track their daily expenses, manage bank cards, analyze spending patterns, and maintain better financial health. Built with modern Flutter architecture and GetX state management, PennyWise provides a smooth, responsive user experience across all platforms.
+PennyWise is a simple expense tracking app works by parsing bank transaction SMS.
 
 ## Technology & Project Introduction
 
 PennyWise is built with Flutter 3.x and uses GetX for state management, providing a robust and scalable architecture for expense tracking and financial management. The project features a clean folder structure, customizable themes, API integration, efficient state management, and comprehensive routing. Technologies used include but are not limited to [Flutter](https://flutter.cn/), [Dart](https://dart.dev/), [GetX](https://pub.dev/packages/get), and more.
 
 <p align='center'>
-    <img src="assets/screenshot/2.jpg" width="187" heght="333" />
-    <img src="assets/screenshot/3.jpg" width="187" heght="333" />
-    <img src="assets/screenshot/4.jpg" width="187" heght="333" />
-    <img src="assets/screenshot/5.jpg" width="187" heght="333" />
-    <img src="assets/screenshot/6.jpg" width="187" heght="333" />
-    <img src="assets/screenshot/7.jpg" width="187" heght="333" />
-    <img src="assets/screenshot/8.jpg" width="187" heght="333" />
-    <img src="assets/screenshot/9.jpg" width="187" heght="333" />
-    <img src="assets/screenshot/chat.gif" width="237px" heght="416px" />
+    <img src="assets/screenshot/1.png" width="187" heght="333" />
+    <img src="assets/screenshot/2.png" width="187" heght="333" />
 </p>
 
 ## Installation & Use
@@ -31,7 +22,7 @@ PennyWise is built with Flutter 3.x and uses GetX for state management, providin
 Clone this project to your local machine:
 
 ```
-git clone https://github.com/your-username/penny_wise.git
+git clone https://github.com/Praveennaik8/PennyWise.git
 ```
 
 **Step 2:**
@@ -70,10 +61,28 @@ lib/
    |- routes.dart - Route export file.
 |- Shared - Global shared folders, including static variables, global services, utils, global Widgets, etc.
    |- shared.dart - Global shared export file.
+   |- parsers/ - You can add your custom parser here
 |- theme - Theme folder.
 |- app_bindings.dart - Services started before the app runs, such as Restful api.
 |- di.dart - Global dependency injection objects, such as SharedPreferences, etc.
 |- main.dart - Main entry.
 ```
+
+-----------------------------------------------------------------------------------
+
+## Android APK Installations:
+
+- Get the latest release APK under assets https://github.com/Praveennaik8/PennyWise/releases
+- Install it, You will need to disable play protect and enable installing from unknown sources: https://support.google.com/android/answer/9457058?hl=en
+  - Why? - Google marks SMS read access as a dangerous permission. So this cannot be on play store and you have to bypass this
+  - Is it dangerous? - No, the code is open source. Everything is done on your phone and your data doesn't go anywhere.
+- Give restricted permissions - https://support.google.com/android/answer/12623953?hl=en
+- Voila, you can manage your expenses now.
+
+NOTE: IOS doesn't support SMS listing. don't ask me why I chose flutter only for android.
+
+-----------------------------------------------------------------------------------
+
+Initially forked from https://github.com/KevinZhang19870314/flutter_getx_boilerplate
 
 
