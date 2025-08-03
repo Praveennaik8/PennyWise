@@ -71,6 +71,14 @@ lib/
 
 -----------------------------------------------------------------------------------
 
+Installations:
+
+- Get the latest release APK under assets https://github.com/Praveennaik8/PennyWise/releases
+- Install it, You will need to disable play protect and enable installing from unknown sources: https://support.google.com/android/answer/9457058?hl=en
+  - Why? - Google marks SMS read access as a dangerous permission. So this cannot be on play store and you have to bypass this
+  - Is it dangerous? - No, the code is open source. Everything is done on your phone and your data doesn't go anywhere.
+- Give restricted permissions - https://support.google.com/android/answer/12623953?hl=en
+- Voila, you can manage your expenses now.
 
 Initially forked from https://github.com/KevinZhang19870314/flutter_getx_boilerplate
 
