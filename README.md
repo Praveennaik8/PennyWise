@@ -13,15 +13,8 @@ PennyWise is a comprehensive expense tracking and financial management applicati
 PennyWise is built with Flutter 3.x and uses GetX for state management, providing a robust and scalable architecture for expense tracking and financial management. The project features a clean folder structure, customizable themes, API integration, efficient state management, and comprehensive routing. Technologies used include but are not limited to [Flutter](https://flutter.cn/), [Dart](https://dart.dev/), [GetX](https://pub.dev/packages/get), and more.
 
 <p align='center'>
+    <img src="assets/screenshot/1.jpg" width="187" heght="333" />
     <img src="assets/screenshot/2.jpg" width="187" heght="333" />
-    <img src="assets/screenshot/3.jpg" width="187" heght="333" />
-    <img src="assets/screenshot/4.jpg" width="187" heght="333" />
-    <img src="assets/screenshot/5.jpg" width="187" heght="333" />
-    <img src="assets/screenshot/6.jpg" width="187" heght="333" />
-    <img src="assets/screenshot/7.jpg" width="187" heght="333" />
-    <img src="assets/screenshot/8.jpg" width="187" heght="333" />
-    <img src="assets/screenshot/9.jpg" width="187" heght="333" />
-    <img src="assets/screenshot/chat.gif" width="237px" heght="416px" />
 </p>
 
 ## Installation & Use
@@ -31,7 +24,7 @@ PennyWise is built with Flutter 3.x and uses GetX for state management, providin
 Clone this project to your local machine:
 
 ```
-git clone https://github.com/your-username/penny_wise.git
+git clone https://github.com/Praveennaik8/PennyWise.git
 ```
 
 **Step 2:**
@@ -75,5 +68,10 @@ lib/
 |- di.dart - Global dependency injection objects, such as SharedPreferences, etc.
 |- main.dart - Main entry.
 ```
+
+-----------------------------------------------------------------------------------
+
+
+Initially forked from https://github.com/KevinZhang19870314/flutter_getx_boilerplate
 
 
